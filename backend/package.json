@@ -1,11 +1,10 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "nodeproj",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "nodemon app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "author": "",
   "license": "ISC",
@@ -14,8 +13,10 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "ejs": "^3.1.6",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
     "express": "^4.17.3",
+    "http-errors": "~1.6.3",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
     "pg": "^8.7.3",

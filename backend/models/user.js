@@ -29,10 +29,10 @@ module.exports = class User extends Sequelize.Model {
       collate: 'utf8_general_ci'
     })
   }
-  static associate(db) {
-    db.User.belongsTo(db.Department, { foreignKey: { name: 'departmentId', onDelete: 'SET NULL' }})
-    db.User.hasMany(db.Device, {
-      foreignKey: { name: 'userId', onDelete: 'SET NULL' }
-    })
-  }
+  // static associate(db) {
+  //   db.User.belongsTo(db.Department, { foreignKey: { name: 'departmentId', onDelete: 'SET NULL' }})
+  //   db.User.hasMany(db.Device, {
+  //     foreignKey: { name: 'userId', onDelete: 'SET NULL' }
+  //   })
+  // }
 }

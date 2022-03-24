@@ -41,12 +41,12 @@ const dao = {
       User.findAndCountAll({
         ...setQuery,
         attributes: { exclude: ['password'] }, // password 필드 제외
-        include: [
-          {
-            model: Department,
-            as: 'Department',
-          },
-        ],
+        // include: [
+        //   {
+        //     model: Department,
+        //     as: 'Department',
+        //   },
+        // ],
       }).then((selectedList) => {
         resolve(selectedList);
       }).catch((err) => {

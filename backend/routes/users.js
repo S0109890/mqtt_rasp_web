@@ -9,13 +9,13 @@ const userService = require('../service/userService')
 router.post('/', async (req, res) => {
   try {
     const params = {
-      departmentId: req.body.departmentId,
+      // departmentId: req.body.departmentId,
       name: req.body.name,
       userid: req.body.userid,
       password: req.body.password,
-      role: req.body.role,
-      email: req.body.email,
-      phone: req.body.phone,
+      // role: req.body.role,
+      // email: req.body.email,
+      // phone: req.body.phone,
     };
     logger.info(`(user.reg.params) ${JSON.stringify(params)}`);
 

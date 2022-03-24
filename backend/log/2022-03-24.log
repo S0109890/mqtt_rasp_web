@@ -1,0 +1,23 @@
+2022-03-24 09:05:19.170[info] app start
+2022-03-24 09:05:19.601[info] DB connection success
+2022-03-24 09:05:19.628[info] Sequelize sync success
+2022-03-24 09:36:53.506[info] app start
+2022-03-24 09:36:53.871[info] DB connection success
+2022-03-24 09:36:53.890[info] Sequelize sync success
+2022-03-24 09:37:50.585[info] (user.reg.params) {"name":"kim","userid":"kim","password":"1"}
+2022-03-24 09:37:50.699[debug] (userService.reg) {"id":1,"name":"kim","userid":"kim","updatedAt":"2022-03-24T00:37:50.588Z","createdAt":"2022-03-24T00:37:50.588Z","updated_pw_date":null}
+2022-03-24 09:37:50.702[info] (user.reg.result) {"id":1,"name":"kim","userid":"kim","updatedAt":"2022-03-24T00:37:50.588Z","createdAt":"2022-03-24T00:37:50.588Z","updated_pw_date":null}
+2022-03-24 09:37:56.341[info] (user.list.params) {}
+2022-03-24 09:37:56.342[error] (userService.list) ReferenceError: Department is not defined
+2022-03-24 09:39:16.594[info] app start
+2022-03-24 09:39:16.837[info] DB connection success
+2022-03-24 09:39:16.862[info] Sequelize sync success
+2022-03-24 09:40:01.158[info] app start
+2022-03-24 09:40:01.419[info] DB connection success
+2022-03-24 09:40:01.435[info] Sequelize sync success
+2022-03-24 09:40:53.582[info] app start
+2022-03-24 09:40:53.779[info] DB connection success
+2022-03-24 09:40:53.797[info] Sequelize sync success
+2022-03-24 09:40:57.564[info] (user.list.params) {}
+2022-03-24 09:40:57.581[debug] (userService.list) {"count":1,"rows":[{"id":1,"name":"kim","userid":"kim","updated_pw_date":null,"createdAt":"2022-03-24T00:37:50.588Z","updatedAt":"2022-03-24T00:37:50.588Z"}]}
+2022-03-24 09:40:57.582[info] (user.list.result) {"count":1,"rows":[{"id":1,"name":"kim","userid":"kim","updated_pw_date":null,"createdAt":"2022-03-24T00:37:50.588Z","updatedAt":"2022-03-24T00:37:50.588Z"}]}

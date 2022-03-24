@@ -1,3 +1,4 @@
+var createError = require('http-errors');
 const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
@@ -10,36 +11,32 @@ const logger = require('./lib/logger')
 const bodyParser = require('body-parser')
 const models = require('./models/index')
 const indexRouter = require('./routes')
-const usersRouter = require('./routes/users')
+// const usersRouter = require('./routes/users')
 
 const app = express()
-
-//view engine setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine','ejs')
-app.set('port',process.env.PORT || 3001)
-
 logger.info('app start')
 
-//DB연결 확인 및 table생성
-sequelize.sync({force: false})
-  .then(()=> {
-    console.log('데이터베이스 연결 성공')
-  })
-  .catch(err => {
-    console.error(err)
-  }) 
 
-models.sequelize.authenticate().then(()=>{
-  logger.info('DB connection success')
+// app.set('port',process.env.PORT || 3001)
 
-  //sequelize sync (table 생성)
-  models.sequelize.sync().then(()=>{
-    logger.info('Sequelize sync success')
-  }).catch((err)=>{
-    logger.error('DB Connection fail', err)
-  })
-})
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// DB 연결 확인 및 table 생성
+models.sequelize.authenticate().then(() => {
+  logger.info('DB connection success');
+
+  // sequelize sync (table 생성)
+  models.sequelize.sync().then(() => {
+    logger.info('Sequelize sync success');
+  }).catch((err) => {
+    logger.error('Sequelize sync error', err);
+  });
+}).catch((err) => {
+  logger.error('DB Connection fail', err);
+});
 // const {sequelize} = require('./models')
 
 
@@ -53,8 +50,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cors(corsConfig));
 
-// app.use('/', indexRouter)
-// app.use('/users', usersRouter)
+app.use('/', indexRouter);
+// app.use('/users', usersRouter);
 
 app.use((req,res,next)=>{
   const error = new Error(`${req.method}${req.url} 라우터가 없습니다`)
@@ -72,3 +69,5 @@ app.use((err,req,res,next)=>{
 app.listen(app.get('port'),()=>{
   console.log(app.get('port'),'번 포트에서 대기중');
 })
+
+module.exports = app;
